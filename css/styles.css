@@ -1,0 +1,213 @@
+:root {
+    --white: #ffffff;
+    --black: #1a1a1a;
+    --primary: #8db600;
+    --secondary: #00c6ab;
+    --tertiary: #6aa3b4;
+    --gray: #cacaca;
+    src: url(Bold.ttf);
+    src: url(Regularr.ttf);
+    src: url(Light.ttf);
+    --primaryfont: Regularr, sans-serif;
+    --secondaryfont: bold,Light,Regularr,sans-serif;
+
+}
+
+@font-face {
+    font-family: 'Regularr';
+    src: url('Regularr.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+    
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    color: var(--primary); /* Cambia el color del enlace a morado */
+    text-decoration: none; /* Elimina la subrayado predeterminado del enlace */
+}
+
+h1 {
+    font-size: 70px;
+    
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+p {  
+    font-family: 'Regularr';
+    src: url('Regularr.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    text-align: center;
+}
+
+@media (max-width: 1200px) {
+    h1 {
+        font-size: 60px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+}
+
+body {
+    font-family: var(--primaryfont);
+    background-image: linear-gradient(to top,#ffffff71 0%,#fff 100%);
+    
+    margin: 0; /* Elimina el margen predeterminado del body */
+    padding: 0; /* Elimina el padding predeterminado del body */
+    background: linear-gradient(to bottom, #416864, #00c6ab);
+
+    }
+
+    .centered-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* for horizontal centering */
+        justify-content: center; /* for vertical centering */
+        height: 100vh; /* full viewport height */
+        text-align: center; /* centers the text inside p and li */
+    }
+
+
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 16px;
+        padding: 16px;
+    }
+    
+    .photo {
+        width: calc(33.3333% - 16px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        border-radius: 8px;
+    }
+    
+    .photo img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    
+    .title {
+        text-align: center;
+        color: var(--primary);
+        font-family: var(--secondaryfont);
+        font-weight: 700;
+    }
+    
+    .nakama {
+        text-align: center;
+        color: var(--primary);
+        font-family: var(--primaryfont);
+        font-weight: 700;
+    }
+    
+    .title span {
+        font-size: 30px;
+    } 
+    
+    .content {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 16px; /* Padding adicional para pequeñas pantallas */
+    }
+    
+    .button {
+        background-color: var(--primary);
+        text-decoration: none;
+        color: var(--white);
+        padding: 10px 20px;
+        text-transform: uppercase;
+        font-weight: bold;
+        border-radius: 5px;
+        border: none;
+    }
+    
+    /* Estilos para pantallas pequeñas (por ejemplo, teléfonos móviles) */
+    @media (max-width: 600px) {
+        .photo {
+            width: calc(100% - 16px); /* Imágenes ocupan el ancho completo en móviles */
+        }
+    
+        .title span {
+            font-size: 24px; /* Tamaño de fuente reducido para móviles */
+        } 
+    
+        .content {
+            padding: 0 8px; /* Reducción del padding para móviles */
+        }
+    }
+    
+.shadow {
+    -webkit-box-shadow: 0px 5px 16px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 5px 16px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 5px 16px 0px rgba(0, 0, 0, 0.1);
+    background-color: var(--white);
+    padding: 20px;
+}
+
+/* Estilos específicos para pantallas pequeñas (por ejemplo, teléfonos) */
+@media (max-width: 600px) {
+    .shadow {
+        -webkit-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1);
+        -moz-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+    }
+}
+
+
+.nav-bg {
+    background-color: var(--primary);
+    transition: color 0.3s ease;
+}
+
+
+
+.calculator {
+    width: 300px;
+    margin: 100px auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #aaa;
+}
+
+.calculator input[type="button"] {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.calculator input[type="text"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+
+.footer {
+    color: var(--primary);
+    text-align: center;
+    margin-top: 10px;
+}

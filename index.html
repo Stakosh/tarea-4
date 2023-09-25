@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+    <title> About me! </title>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap" rel="stylesheet" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1 class="title"> Javi <span> Soto :p </span></h1>
+    </header>
+
+    <div class="nav-bg"> 
+        <nav class="primary-nav content">
+            <a href="/index.html"> Galeria de Fotos </a>
+ 
+
+        </nav>
+    </div>
+
+    <section class="content shadow" >
+            <h2 class="nakama">~ Sobre mi ~</h2>
+            <div class="centered-content">
+                <p>Tengo 22 años, creo fielmente en que si te mantienes firmes en tus valores y actuas bien, no te puede ir tan mal en la vida, tambien creo que cuando alguien se esfuerza dia a dia por algo, es capaz de obtener las recompensas que conlleva el progeso de esto.
+                    actualmente mi vida es:</p>
+                    <ul>Estudiar</ul>
+                    <ul>Trabajar</ul>
+                    <ul>Ver One Piece</ul>
+                    <ul>Ver a mi familia y amigos cuando me queda tiempo</ul>
+                    <p> Dentro de los años que vienen mas adelante espero ir consiguiendo nuevas vivencias y anecdotas, quiero vivir cada día de buena manera, porque nunca sabes cuando llegará la hora de partir y no quiero arrepentirme de las cosas que hago con mi tiempo, y planeo algún día tener un negocia con uno de mis amigos mas cercanos.</p>
+            </div>
+    </section>
+    <br>
+    
+
+    <section class="content shadow", id="nakamas_section">
+        <h2 class="nakama">~ Galeria de fotos ~</h2>
+        <div class="gallery">
+            <div class="photo"><img src="img/a.jpg" alt="Descripción de la imagen 1"></div>
+            <div class="photo"><img src="img/b.jpg" alt="Descripción de la imagen 1"></div>
+            <div class="photo"><img src="img/c.jpg" alt="Descripción de la imagen 1"></div>
+            <div class="photo"><img src="img/d.jpeg" alt="Descripción de la imagen 1"></div>
+            <div class="photo"><img src="img/e.jpeg" alt="Descripción de la imagen 1"></div>
+            <div class="photo"><img src="img/f.jpeg"alt="Descripción de la imagen 1"></div>
+        </div>
+        
+    </section> 
+
+    <br> 
+    <main class="content shadow", id="contacto_form">
+        <button onclick="abrirPopUp()"> Contacto  </button>
+
+
+    <div id="popUp" style="display: none;">
+        <h2>Formulario Contacto </h2>
+        <form class="contact-form">
+            <label for="nombre">Nombre:<br></label>
+            <input type="text" id="nombre" name="nombre" required><br>
+           
+            <label for="email">Correo Electrónico:<br></label>
+            <input type="email" id="email" name="email" required><br>
+           
+            <label for="asunto">Asunto:<br></label>
+            <input type="text" id="asunto" name="asunto" required><br>
+           
+           <br>
+            <button type="submit">Enviar</button>
+        </form>
+        <div id="success-message" style="display: none;">
+            ¡Mensaje enviado con éxito!
+        </div>
+    
+        <br> 
+        <button onclick="cerrarPopUp()">Cerrar</button>
+    </div>
+
+
+    <div class="calculator">
+        <input type="text" id="display" disabled>
+        <br>
+        <input type="button" value="1" onclick="appendToDisplay('1')">
+        <input type="button" value="2" onclick="appendToDisplay('2')">
+        <input type="button" value="3" onclick="appendToDisplay('3')">
+        <input type="button" value="+" onclick="appendToDisplay('+')">
+        <br>
+        <input type="button" value="4" onclick="appendToDisplay('4')">
+        <input type="button" value="5" onclick="appendToDisplay('5')">
+        <input type="button" value="6" onclick="appendToDisplay('6')">
+        <input type="button" value="-" onclick="appendToDisplay('-')">
+        <br>
+        <input type="button" value="7" onclick="appendToDisplay('7')">
+        <input type="button" value="8" onclick="appendToDisplay('8')">
+        <input type="button" value="9" onclick="appendToDisplay('9')">
+        <input type="button" value="*" onclick="appendToDisplay('*')">
+        <br>
+        <input type="button" value="C" onclick="clearDisplay()">
+        <input type="button" value="0" onclick="appendToDisplay('0')">
+        <input type="button" value="=" onclick="calculate()">
+        <input type="button" value="/" onclick="appendToDisplay('/')">
+    </div>
+    
+
+    <div class="nav-bg"> 
+        <nav class="primary-nav content">
+            <a href="/index.html"> Galeria de Fotos </a>
+ 
+
+        </nav>
+    </div>
+
+
+
+
+    
+<script>
+
+    function abrirPopUp(){
+            document.getElementById('popUp').style.display = "block"
+    }
+    // Obtiene el formulario y el mensaje de éxito
+    var formulario = document.querySelector('.contact-form');
+    var successMessage = document.getElementById('success-message');
+
+    // Función que se ejecuta al enviar el formulario
+    formulario.addEventListener('submit', function(event) {
+        event.preventDefault(); // Previene el envío tradicional del formulario
+
+        // Muestra el mensaje de éxito
+        successMessage.style.display = 'block';
+    });
+
+    // Función para cerrar el pop-up
+    function cerrarPopUp() {
+        document.getElementById('popUp').style.display = 'none';
+    
+    }
+
+    let display = document.getElementById('display');
+
+function appendToDisplay(value) {
+    display.value += value;
+}
+
+function clearDisplay() {
+    display.value = "";
+}
+
+function calculate() {
+    try {
+        display.value = eval(display.value);
+    } catch (e) {
+        display.value = "Error";
+    }
+}
+  
+</script>
+
+
+
+        
+
+
+
+
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2023 Js :p </p>
+    </footer>
+
+
+</body>
+</html>
